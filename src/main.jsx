@@ -9,6 +9,7 @@ import {
 import Home from './components/Home/Home.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import Recipes from './components/Recipes/Recipes.jsx';
+import ShowDetails from './components/ShowDetails/ShowDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/recipes',
-        element: <Recipes></Recipes> ,
-        loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+        loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a'),
+        element: <Recipes></Recipes> 
+      },
+      {
+        path: '/recipes/:recipeId',
+        loader: ({params})=> fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.recipeId}`),
+        element: <ShowDetails></ShowDetails>
       },
       {
         path: '/contact',
