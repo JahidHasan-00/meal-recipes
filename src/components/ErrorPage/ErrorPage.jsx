@@ -2,7 +2,6 @@ import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
     const error = useRouteError();
-    console.log(error);
     return (
         <div>
             <h1 className="text-2xl font-bold">Oops!</h1>

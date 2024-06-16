@@ -15,7 +15,7 @@ const Recipe = ({recipe}) => {
     return (
         <div className='m-2 p-3 border-2 rounded-lg border-blue-100'>
             <div className="card bg-blue-100 h-[600px]">
-                    <figure><img src={strMealThumb} alt="recipe_img" /></figure>
+                    <figure><img className='w-11/12 h-4/5 rounded-xl' src={strMealThumb} alt="recipe_img" /></figure>
                     <div className="card-body px-0 items-center space-y-4">
                         <h2 className='text-lg font-semibold'><span className='border-b-2 border-dotted border-black'>Meal_Id</span>: {idMeal}</h2>
                         <h2 className="text-xl font-semibold"><span className='border-b-2 border-dotted border-black'>Recipe_Name</span>: <span className='text-amber-800'>{strMeal}</span></h2>
